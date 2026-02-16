@@ -21,7 +21,7 @@ if os.path.exists(DB_FILE):
         db_cache = json.load(f)
 else:
     db_cache = {}
-
+    
 def save_db():
     with open(DB_FILE, 'w', encoding='utf-8') as f:
         json.dump(db_cache, f, indent=4, ensure_ascii=False)
@@ -167,4 +167,5 @@ def handle_callbacks(call):
 # ==========================================
 bot.set_my_commands([BotCommand("start", "تشغيل المتجر")])
 print("🚀 متجر كليك يعمل الآن (تم حذف السلة + إضافة زر الطلب الخاص)...")
+
 bot.infinity_polling()
